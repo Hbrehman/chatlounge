@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>hello world</h1>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"
+      integrity="sha512-v8ng/uGxkge3d1IJuEo6dJP8JViyvms0cly9pnbfRxT6/31c3dRWxIiwGnMSWwZjHKOuY3EVmijs7k1jz/9bLA=="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const socket = io();
+      socket.on("connection", () => {
+        console.log("connected");
+      });
+      socket.on("success", (message) => {
+        console.log(message);
+      });
+
+      socket.on("chabal", (message) => {
+        console.log(message);
+      });
+
+      socket.emit("something", "this message contains something something");
+      // const ws = new WebSocket("ws://127.0.0.1:9000");
+      // ws.onmessage = (event) => {
+      //   console.log(event);
+      // };
+      // ws.onopen = (event) => {
+      //   ws.send("I am so exiceted I am connected to the server!!");
+      // };
+      // console.log(ws);
+      // //   const socket = io();
+    </script>
+  </body>
+</html>
