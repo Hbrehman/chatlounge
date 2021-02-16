@@ -21,6 +21,7 @@ socket.on("message", (message) => {
 
   //   const div = document.createElement("div");
   //   div.classList.add('')
+  chatMessages.scrollTop = chatMessages.scrollHeight;
   console.log(message);
 });
 
